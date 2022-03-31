@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link href="basic.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+      <h1>Converter</h1>
+      <p>This is a test site for having a page for conversions I need. Double check the conversions as these could be used for applications that might be a bit off.</p>
+      <form>
+           <h2>Graphic Design/Web Measurements: </h2>
+          <div class="form-details">
+           <div class=""input-box">
+           <label>Pixels<span style="font-size: 0.6em;"> (96 ppi)</span></label>
+           <input type="number" class="fillBox" id="pixels" maxlength="10" size="15" placeholder="pixels" oninput="graphicDesignConverter(this.id,this.value)" onchange="graphicDesignConverter(this.id,this.value)" onkeypress="return isNumberKey(event)">
+          </div>
+          <div class=""input-box">
+           <label>Points</label>
+           <input type="number" class="fillBox" id="points" maxlength="10" size="15" placeholder="points" oninput="graphicDesignConverter(this.id,this.value)" onchange="graphicDesignConverter(this.id,this.value)" onkeypress="return isNumberKey(event)">
+          </div>
+          <div class=""input-box">
+           <label>Inches</label>
+           <input type="number" class="fillBox" id="inches" maxlength="10" size="15" placeholder="inches" oninput="graphicDesignConverter(this.id,this.value)" onchange="graphicDesignConverter(this.id,this.value)" onkeypress="return isNumberKey(event)">
+          </div>
+          <div class=""input-box">
+           <label>Centimeters</label>
+           <input type="number" class="fillBox" id="centimeters" maxlength="10" size="15" placeholder="centimeters" oninput="graphicDesignConverter(this.id,this.value)" onchange="graphicDesignConverter(this.id,this.value)" onkeypress="return isNumberKey(event)">
+          </div>
+          <div class=""input-box">
+           <label>Millimeters</label>
+           <input type="number" class="fillBox" id="millimeters" maxlength="10" size="15" placeholder="millimeters" oninput="graphicDesignConverter(this.id,this.value)" onchange="graphicDesignConverter(this.id,this.value)" onkeypress="return isNumberKey(event)">
+          </div>
+          <div class=""input-box">
+           <label>Picas</label>
+           <input type="number" class="fillBox" id="picas" maxlength="10" size="15" placeholder="picas" oninput="graphicDesignConverter(this.id,this.value)" onchange="graphicDesignConverter(this.id,this.value)">
+          </div>
+          <div class=""input-box">
+          <input type="reset" value="Reset" class="reset">
+          </div>
+          </div>
+    </form>
+
+    <form>
+        <h2>Color Conversions: </h2>
+        <p>*For CMYK fill in black (K) last</p>
+      <div class="form-details">
+        <div class="">
+        <label>Hex #</label>
+        <input type="text" class="fillBox" id="hex" maxlength="6" size="15" placeholder="XXXXXX" oninput="colorConverter(this.id,this.value)" onchange="colorConverter(this.id,this.value)" onkeyup="this.value = this.value.replace(/[^a-fA-F0-9]/, '')"/>
+      </div>
+      <div class="">
+        <label>RGB<span style="font-size: 0.5em;"> comma separated</span></label>
+        <input type="text" class="fillBox" id="RGB" maxlength="15" size="15" placeholder="XXX, XXX, XXX" oninput="colorConverter(this.id,this.value)" onchange="colorConverter(this.id,this.value)">
+      </div>
+      <div class="">
+        <label>C</label>
+        <input type="text" class="fillBox" id="C" maxlength="3" size="4" placeholder="XXX">
+      </div>
+      <div class="">
+        <label>M</label>
+        <input type="text" class="fillBox" id="M" maxlength="3" size="4" placeholder="XXX">
+      </div>
+      <div class="">
+        <label>Y</label>
+        <input type="text" class="fillBox" id="Y" maxlength="3" size="4" placeholder="XXX">
+      </div>
+      <div class="">
+        <label>K*</label>
+        <input type="text" class="fillBox" id="K" maxlength="3" size="4" placeholder="XXX" oninput="colorConverter(this.id,this.value)" onchange="colorConverter(this.id,this.value)">
+      </div>
+      <!-- <input type="button" id="CMYK" value="CMYK" onclick="colorConverter(this.id,this.value);"> -->
+      <p>**The CMYK to/from is for approximate color, color profiles would be needed for official color of your device.</p>
+      </div>
+    </form>
+
+
+    <form>
+      <h2>Computer Storage Sizes -Decimal</h2>
+      <p>Decimal calculations Mac 10.6+, iOS 11+; check your system to see which it uses.</p>
+     <div class="form-details">
+      <div class=""input-box">
+      <label>Kilobytes</label>
+      <input type="number" class="fillBox" id="kilobytesd" maxlength="10" size="15" placeholder="Kilobytes" oninput="computerDecimalConverter(this.id,this.value)" onchange="computerDecimalConverter(this.id,this.value)" onkeypress="return isNumberKey(event)"/>
+     </div>
+     <div class=""input-box">
+      <label>Megabytes</label>
+      <input type="number" class="fillBox" id="megabytesd" maxlength="10" size="15" placeholder="Megabytes" oninput="computerDecimalConverter(this.id,this.value)" onchange="computerDecimalConverter(this.id,this.value)" onkeypress="return isNumberKey(event)"/>
+     </div>
+     <div class=""input-box">
+      <label>Gigabytes</label>
+      <input type="number" class="fillBox" id="gigabytesd" maxlength="10" size="15" placeholder="Gigabytes" oninput="computerDecimalConverter(this.id,this.value)" onchange="computerDecimalConverter(this.id,this.value)" onkeypress="return isNumberKey(event)"/>
+     </div>
+     <div class=""input-box">
+      <label>Terabytes</label>
+      <input type="number" class="fillBox" id="terabytesd" maxlength="10" size="15" placeholder="Terabytes" oninput="computerDecimalConverter(this.id,this.value)" onchange="computerDecimalConverter(this.id,this.value)" onkeypress="return isNumberKey(event)"/>
+     </div>
+     <div class=""input-box">
+     <input type="reset" value="Reset" class="reset">
+     </div>
+     </div>
+    </form>
+    
+    <form>
+      <h2>Computer Storage Sizes-Binary </h2>
+      <p>Binary calculations: Mac -10.5, iOS -10; check your system to see which it uses.</p>
+     <div class="form-details">
+      <div class=""input-box">
+      <label>Kilobytes</label>
+      <input type="number" class="fillBox" id="kilobytesb" maxlength="10" size="15" placeholder="Kilobytes" oninput="computerBinaryConverter(this.id,this.value)" onchange="computerBinaryConverter(this.id,this.value)" onkeypress="return isNumberKey(event)">
+     </div>
+     <div class=""input-box">
+      <label>Megabytes</label>
+      <input type="number" class="fillBox" id="megabytesb" maxlength="10" size="15" placeholder="Megabytes" oninput="computerBinaryConverter(this.id,this.value)" onchange="computerBinaryConverter(this.id,this.value)" onkeypress="return isNumberKey(event)">
+     </div>
+     <div class=""input-box">
+      <label>Gigabytes</label>
+      <input type="number" class="fillBox" id="gigabytesb" maxlength="10" size="15" placeholder="Gigabytes" oninput="computerBinaryConverter(this.id,this.value)" onchange="computerBinaryConverter(this.id,this.value)" onkeypress="return isNumberKey(event)">
+     </div>
+     <div class=""input-box">
+      <label>Terabytes</label>
+      <input type="number" class="fillBox" id="terabytesb" maxlength="10" size="15" placeholder="Terabytes" oninput="computerBinaryConverter(this.id,this.value)" onchange="computerBinaryConverter(this.id,this.value)" onkeypress="return isNumberKey(event)">
+     </div>
+     <div class=""input-box">
+     <input type="reset" value="Reset" class="reset">
+     </div>
+     </div>
+    </form>
+    <p>If you seen any issues with these calculations please let <a href="https://www.lynnamacher.com/contact-us/" target="_blank">me know</a>.</p>
+
+  </div>
+</body>
+<script type="text/javascript" src="converter.js"> </script>
+</html>
